@@ -66,6 +66,10 @@ var printHeadlines = function(response){
       var headlineTag = document.createElement("li");
       headlineTag.innerText = headline;
       headlineList.appendChild(headlineTag);
+      author = articleList[i].author;
+      authorTag = document.createElement("p");
+      authorTag.innerText = author;
+      headlineTag.appendChild(authorTag);
       generateLinkandListener(headlineTag, articleList[i]);
     }
     sourceBox.appendChild(headlineList);

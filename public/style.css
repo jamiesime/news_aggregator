@@ -21,6 +21,7 @@ h2 {
 select {
   -webkit-appearance: none;
   font-size: 20px;
+  width: 300px;
 }
 
 button {
@@ -60,7 +61,7 @@ button {
   border-radius: 3px;
   margin: 10px;
   padding: 5px;
-  max-width: 200px;
+  max-width: 300px;
 }
 
 .source-box h2 {
@@ -76,9 +77,19 @@ button {
 
 .source-box ul li {
   margin: 10px;
-  margin-left: 0px;
   color: #082538;
   background-color: #9abdd1;
   border-radius: 3px;
   padding: 10px;
+}
+
+.source-box ul li:hover {
+  color: #9abdd1;
+  background-color: #082538;
+}
+
+.source-box p {
+  text-align: right;
+  font-size: 14px;
+  font-style: italic;
 }
