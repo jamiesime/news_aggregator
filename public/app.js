@@ -14,6 +14,12 @@ var requestComplete = function(){
   printHeadlines(response);
 };
 
+var generateLinkandListener = function(headlineTag, article){
+  headlineTag.addEventListener('click', function(){
+    goToLink(article.url);
+  });
+}
+
 var printHeadlines = function(response){
   var sourceRows = document.querySelector('#source-rows');
   var articleList = response.articles;
@@ -28,9 +34,14 @@ var printHeadlines = function(response){
       var headlineTag = document.createElement("li");
       headlineTag.innerText = headline;
       headlineList.appendChild(headlineTag);
+      generateLinkandListener(headlineTag, articleList[i]);
     }
     sourceBox.appendChild(headlineList);
     sourceRows.appendChild(sourceBox);
+}
+
+var goToLink = function(link){
+  window.open(link, "_blank");
 }
 
 var generateSourceBox = function(source){
