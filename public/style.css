@@ -12,3 +12,13 @@ h1 {
   align-items: center;
   flex-direction: column;
 }
+
+#source-rows {
+  display: flex;
+  flex-direction: row;
+}
+
+.source-box {
+  display: flex;
+  flex-direction: column;
+}
