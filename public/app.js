@@ -15,23 +15,22 @@ var requestComplete = function(){
 };
 
 var printHeadlines = function(response){
-  var sourceDiv = document.querySelector('#source-rows');
+  var sourceRows = document.querySelector('#source-rows');
   var articleList = response.articles;
-  var headline;
-  var headlineTag;
-  var sourceBox;
+  sourceBox = document.createElement("div");
+  sourceBox.className = "source-box";
+  headlineList = document.createElement("ul")
+  var boxHeader = document.createElement("h2");
+  boxHeader.innerText = articleList[0].source.name;
+  sourceBox.appendChild(boxHeader);
   for (i = 0 ; i < articleList.length ; i++){
-    headline = articleList[i].title;
-    sourceBox = document.createElement("div");
-    sourceBox.className = "source-box";
-    headlineList = document.createElement("ul")
-    headlineTag = document.createElement("li");
-    headlineList.appendChild(headlineTag);
-    headlineTag.innerText = headline;
-
+      var headline = articleList[i].title;
+      var headlineTag = document.createElement("li");
+      headlineTag.innerText = headline;
+      headlineList.appendChild(headlineTag);
+    }
     sourceBox.appendChild(headlineList);
-    sourceDiv.appendChild(sourceBox);
-  }
+    sourceRows.appendChild(sourceBox);
 }
 
 var generateSourceBox = function(source){
@@ -42,6 +41,7 @@ var generateSourceBox = function(source){
 var app = function(){
   generateSourceBox("techcrunch");
   generateSourceBox("bbc-news");
+  generateSourceBox("el-mundo");
 }
 
 window.addEventListener('load', app);

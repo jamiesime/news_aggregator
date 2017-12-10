@@ -1,8 +1,16 @@
 body {
-
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
+  text-align: center;
+  background-color: tomato;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
   text-align: center;
 }
 
@@ -13,6 +21,15 @@ h1 {
   flex-direction: column;
 }
 
+#search-box {
+  margin: 10px;
+  margin-top: 30px;
+}
+
+#submit-area {
+  margin: 10px;
+}
+
 #source-rows {
   display: flex;
   flex-direction: row;
@@ -21,4 +38,22 @@ h1 {
 .source-box {
   display: flex;
   flex-direction: column;
+  background-color: tomato;
+  border-radius: 10px;
+  margin: 10px;
+  max-width: 200px;
+}
+
+.source-box h2 {
+  text-align: center;
+  color: white;
+}
+
+.source-box ul {
+  list-style: none;
+}
+
+.source-box ul li {
+  margin: 10px;
+  margin-left: 0px;
 }
